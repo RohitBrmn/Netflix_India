@@ -1,0 +1,181 @@
+/* ! CSS reset  */
+*,
+*::after,
+*::before {
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+    sans-serif;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+/* todo -----------Homepage starts here--------------  */
+.Banner {
+  min-width: 100%;
+  height: 100vh;
+  display: inline-block;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("Images/bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* ! header starts here  */
+header {
+  height: 100px;
+  margin-inline: 3.5vw;
+  margin-block: 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ? for logo */
+header .logo {
+  width: max(100px, 15%);
+  height: 100%;
+}
+header .logo svg {
+  width: max(90px, 69%);
+}
+
+/* ? for button  */
+header .other {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* * lang-select-btn */
+header .other .lang-select-box {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #aaa;
+}
+header .other .lang-select-box select {
+  color: white;
+  background: transparent;
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+header .other .lang-select-box select option {
+  background-color: rgba(85, 85, 85, 0.7);
+}
+
+/* * log btn  */
+header .other button {
+  color: #fff;
+  background-color: #e50914;
+  padding: 8px 17px;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+/* todo --------------------container starts here---------------------  */
+.container {
+  /* border: 2px solid red; */
+  color: white;
+  width: min(700px, 70%);
+  margin-top: 150px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .content h1 {
+  font-weight: 600;
+  padding-bottom: 10px;
+  font-size: clamp(28px, 6.7vw, 60px);
+}
+.container .content h3 {
+  padding-bottom: 17px;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.6vw, 25px);
+}
+.container .content h4 {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  /* font-size: clamp(1rem, 1.2vw, 20px); */
+  padding-bottom: 17px;
+  font-size: 2rem;
+}
+
+.container .content .start-info form {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .content .start-info form input {
+  width: 65%;
+  height: 100%;
+}
+.container .content .start-info form input::placeholder {
+  padding: 5px;
+  font-size: clamp(14px, 2vw, 17.5px);
+}
+
+.container .content .start-info form button {
+  width: 35%;
+  height: 100%;
+  color: #fff;
+  background-color: #e50914;
+  background-image: linear-gradient(180deg, #e50914, #db0510);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 45%);
+  font-size: 1.875rem;
+}
+.container .content .start-info form button i {
+  font-size: clamp(14px, 2.6vw, 23px);
+}
+
+/* todo -------------------------Responsive Design starts here----------------------  */
+/* ! For all screen type phones */
+@media screen and (max-width: 549px) {
+  /* ? for button  */
+  header .other {
+    gap: 15px;
+  }
+  /* * lang-select-btn */
+  header .other .lang-select-box select {
+    padding: 2px 10px;
+  }
+  /* * log btn  */
+  header .other button {
+    padding: 5px 8px;
+  }
+  .container {
+    width: 80%;
+  }
+}
+
+/* ! For tablets */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 70%;
+    margin-top: 20px;
+  }
+  .container .content .start-info form {
+    height: auto;
+    flex-direction: column;
+  }
+  .container .content .start-info form input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 30px;
+  }
+  .container .content .start-info form button {
+    width: 130px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
